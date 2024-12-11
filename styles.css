@@ -1,0 +1,283 @@
+.low-priority {
+    background-color: green;
+    color: white;
+  }
+  
+.medium-priority {
+    background-color: orange;
+    color: white;
+  }
+  
+.high-priority {
+    background-color: red;
+    color: white;
+  }
+  
+.task-button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: left;
+    width: 100%;
+    }
+
+.task-button:hover {
+    background-color: #0056b3;
+    }
+
+.task-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+    }
+
+.completed-task {
+    background-color: grey; /* Change to grey when completed */
+    color: white; /* Optional: Change text color for better contrast */
+    }
+
+#clear-completed {
+    background-color: #dc3545; /* Red color to match the urgency of clearing tasks */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Adjust width to make it look more balanced */
+    text-align: center;
+    margin-top: 20px; /* Space between this button and the completed tasks */
+    display: block; /* Center the button */
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+    #clear-completed:hover {
+    background-color: #c82333; /* Darker red on hover for a nice effect */
+    }
+    
+    #clear-completed:active {
+    background-color: #bd2130; /* Even darker red when clicked */
+    }
+    
+    #clear-completed:disabled {
+    background-color: #6c757d; /* Grey when disabled */
+    cursor: not-allowed;
+    }
+      
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+  }
+  
+/* Title Styles */
+.titleH1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #343a40; /* Dark gray for the main title */
+    margin-top: 20px;
+    }
+
+/* Streak and Tasks Title Styles */
+.streakH2{
+    font-size: 1.5rem;
+    color: #495057; /* Lighter gray for secondary headers */
+    margin-left: 20px;
+    }
+/* Task Header Styling */
+.taskH2, h3 {
+    font-size: 1.5rem;
+    color: #495057; /* Lighter gray for secondary headers */
+    text-align: center; /* Center the header */
+    text-decoration: underline; /* Underline the header */
+    margin-top: 20px; /* Adjust margin for spacing */
+    margin-bottom: 10px; /* Add some space below the header */
+  }
+  
+
+/* Task List Title */
+h3 {
+    font-size: 1.2rem;
+    color: #495057;
+    
+    }
+
+/* Horizontal Rule Styling */
+hr {
+    border: 0;
+    border-top: 2px solid #dee2e6; /* Light gray line */
+    margin: 10px 20px;
+    }
+
+/* Form Styles */
+form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    max-width: 600px;
+    margin: 20px auto;
+    }
+
+form label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #495057;
+    margin-bottom: 5px;
+    display: block; /* Ensure it appears above the buttons */
+}
+
+form input[type="text"], form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+form button {
+    background-color: #007bff; /* Blue background for the button */
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Full width */
+    transition: background-color 0.3s ease;
+    }
+
+form button:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+    }
+
+/* Task List Styles */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+    }
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+li button {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+li button:hover {
+    background-color: #007bff;
+    color: white;
+    }
+
+li.completed-task {
+    background-color: #e9ecef; /* Light grey background for completed tasks */
+    text-decoration: line-through; /* Strikethrough for completed tasks */
+    color: #6c757d; /* Greyed-out text for completed tasks */
+    }
+
+#clear-completed {
+    background-color: #dc3545; /* Red for the clear completed tasks button */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px; /* Fixed width */
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+#clear-completed:hover {
+    background-color: #c82333; /* Darker red on hover */
+    }
+
+#clear-completed:active {
+    background-color: #bd2130; /* Darker red when clicked */
+    }
+  
+/* Priority Button Styling */
+.priority-buttons {
+    display: flex;
+    justify-content: space-between; /* Space out the buttons */
+    margin-bottom: 10px;
+}
+
+.priority-button {
+    background-color: #f8f9fa; /* Light background for buttons */
+    color: #495057;
+    border: 1px solid #ced4da;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 30%; /* Each button takes up 30% of the width */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect with matching active color */
+#low-priority:hover {
+    background-color: #28a745; /* Green hover background for Low priority */
+    color: white;
+}
+
+#medium-priority:hover {
+    background-color: #ffc107; /* Orange hover background for Medium priority */
+    color: white;
+}
+
+#high-priority:hover {
+    background-color: #dc3545; /* Red hover background for High priority */
+    color: white;
+}
+
+/* Active state for buttons */
+.priority-button.active {
+    color: white;
+}
+
+#low-priority.active {
+    background-color: #28a745; /* Green for active (Low) priority */
+}
+
+#medium-priority.active {
+    background-color: #ffc107; /* Orange for active (Medium) priority */
+}
+
+#high-priority.active {
+    background-color: #dc3545; /* Red for active (High) priority */
+}
+
+  
+  
+  
+  
+  
