@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Track</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="titleH1">Time Track</h1>
+    <h2 class="streakH2">Streak:</h2>
+    <hr/>
+
+    <h2 class="taskH2">Task Creator</h2>
+
+    <form id="task-form">
+        <input type="text" id="task-name" placeholder="Enter your task" required>
+        <label>Priority:</label>
+        <div class="priority-buttons">
+            <button type="button" class="priority-button" id="low-priority">Low</button>
+            <button type="button" class="priority-button" id="medium-priority">Medium</button>
+            <button type="button" class="priority-button" id="high-priority">High</button>
+        </div>
+    
+        <button type="submit">Add Task</button>
+    </form>
+    
+
+    <h3 class="taskH3">
+        Incomplete Tasks:
+        <button id="edit-incomplete" class="edit-section-button">Edit</button>
+    </h3>
+    <ul id="incomplete-tasks" style="padding: 0;"></ul>
+    <div id="edit-actions" style="display: none;">
+        <button id="save-changes" class="save-button">Save</button>
+        <button id="undo-changes" class="undo-button">Undo</button>
+    </div>
+    
+
+    <h3>Completed Tasks</h2>
+    <ul id="completed-tasks" style="padding: 0;"></ul>
+
+    <button id="clear-completed">Clear Completed Tasks</button>
+    
+    <script src="script.js"></script>
+</body>
+</html>
