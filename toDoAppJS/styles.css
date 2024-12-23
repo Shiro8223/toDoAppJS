@@ -1,3 +1,16 @@
+.titleWrapper{
+    background-color: #007bff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.streakWrapper{
+    background-color: #ced4da;
+    display: flex;
+    padding: 0%;
+}
+
 .low-priority {
     background-color: green;
     color: white;
@@ -78,6 +91,7 @@ body {
   
 /* Title Styles */
 .titleH1 {
+    font-family: "Dancing Script", serif;
     text-align: center;
     font-size: 2.5rem;
     color: #343a40; /* Dark gray for the main title */

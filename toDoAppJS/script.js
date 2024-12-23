@@ -13,7 +13,10 @@ document.getElementById("task-form").addEventListener("submit", function (event)
     const taskButton = document.createElement("button");
     taskButton.textContent = `${taskName} - Priority: ${taskPriority.charAt(0).toUpperCase() + taskPriority.slice(1)}`;
     taskButton.classList.add("task-button");
-  
+
+    //create a clickable variable for completeable tasks
+    let clickableBtn = true;
+
     // Assign priority class based on button click
     if (taskPriority === "low") {
         taskButton.classList.add("low-priority");
@@ -31,6 +34,7 @@ document.getElementById("task-form").addEventListener("submit", function (event)
     
         // Toggle Edit Mode
         function enableEditMode() {
+            clickableBtn = false;
             const incompleteTasks = document.querySelectorAll("#incomplete-tasks .task");
             incompleteTasks.forEach(task => {
                 // Check if task already has a remove button
@@ -60,6 +64,7 @@ document.getElementById("task-form").addEventListener("submit", function (event)
                 if (removeButton) removeButton.remove(); // Remove the 'X' buttons
             });
             editActions.style.display = "none"; // Exit edit mode
+            clickableBtn = true;
         });
     
         // Undo Changes
@@ -71,13 +76,10 @@ document.getElementById("task-form").addEventListener("submit", function (event)
             editActions.style.display = "flex"; // Keep Save and Undo visible
         });
     });
-    
-    
-    
 
     // Add event listener to mark as completed/incomplete
     taskButton.addEventListener("click", function () {
-        if (!taskButton.hasAttribute("data-completed")) {
+        if (!taskButton.hasAttribute("data-completed") && clickableBtn == true) {
             // Mark as completed
             taskButton.textContent = `${taskName} - Priority: ${taskPriority.charAt(0).toUpperCase() + taskPriority.slice(1)}`;
             taskButton.setAttribute("data-completed", "true"); // Mark as completed
@@ -85,10 +87,12 @@ document.getElementById("task-form").addEventListener("submit", function (event)
             document.getElementById("completed-tasks").appendChild(taskContainer); // Move to completed list
         } else {
             // Mark as incomplete
-            taskButton.textContent = `${taskName} - Priority: ${taskPriority.charAt(0).toUpperCase() + taskPriority.slice(1)}`;
-            taskButton.removeAttribute("data-completed"); // Remove the completed status
-            taskButton.classList.remove("completed-task"); // Remove the completed-task class
-            document.getElementById("incomplete-tasks").appendChild(taskContainer); // Move back to incomplete list
+            if (clickableBtn == true){
+                taskButton.textContent = `${taskName} - Priority: ${taskPriority.charAt(0).toUpperCase() + taskPriority.slice(1)}`;
+                taskButton.removeAttribute("data-completed"); // Remove the completed status
+                taskButton.classList.remove("completed-task"); // Remove the completed-task class
+                document.getElementById("incomplete-tasks").appendChild(taskContainer); // Move back to incomplete list
+            }    
         }
     });
   

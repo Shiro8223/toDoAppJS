@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Management</title>
+  <link rel="stylesheet" href="LoginStyles.css">
+</head>
+<body>
+  <div id="auth-section">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="login-username">Username:</label>
+      <input type="text" id="login-username" required>
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" required>
+      <button type="submit">Login</button>
+    </form>
+
+    <h2>Register</h2>
+    <form id="register-form">
+      <label for="register-username">Username:</label>
+      <input type="text" id="register-username" required>
+      <label for="register-password">Password:</label>
+      <input type="password" id="register-password" required>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <div id="profile-section" style="display: none;">
+    <h2>Welcome, <span id="profile-username"></span>!</h2>
+    <label for="profile-data">Your Data:</label>
+    <textarea id="profile-data"></textarea>
+    <button id="save-data">Save Data</button>
+    <button id="logout">Logout</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
